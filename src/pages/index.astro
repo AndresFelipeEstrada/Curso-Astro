@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css'
 import Layout from '../layouts/Layout.astro'
+import Gretting from '../components/Gretting'
 const pageTitle = 'Aprendiendo Astro'
 ---
 
 <Layout title={pageTitle}>
-	<h1>{pageTitle}</h1>
+	<h1 class="pageTitle">{pageTitle}</h1>
+	<Gretting client:load messages={['Hola', 'Que tal', 'Hola a todos']}/>
 </Layout>
 
 <style>
@@ -27,7 +29,9 @@ const pageTitle = 'Aprendiendo Astro'
 		height: auto;
 		z-index: -1;
 	}
-	h1 {
+
+  :global(.dark) .pageTitle{ color: black; }
+	.pageTitle{
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
@@ -35,6 +39,7 @@ const pageTitle = 'Aprendiendo Astro'
 		margin-bottom: 1em;
 		color: white;
 	}
+
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
