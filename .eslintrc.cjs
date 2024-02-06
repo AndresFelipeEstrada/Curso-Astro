@@ -1,42 +1,25 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
   extends: [
-    "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
+    "plugin:react/recommended"
   ],
   overrides: [
     {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        tsconfigRootDir: __dirname,
-        sourceType: 'module',
-        ecmaVersion: 'latest'
-      },
-    },
-    {
-      files: ["*.astro"],
+      files: ["*.astro","*.jsx"],
+      processor: "astro/client-side-ts", 
       parser: "astro-eslint-parser",
       parserOptions: {
         parser: "@typescript-eslint/parser",
+        sourceType: "module", // Set the source type to 'module'
+        ecmaVersion: "latest", // Enable the latest ECMAScript features
         extraFileExtensions: [".astro"],
       },
-      rules: {},
+      "env": {
+        "es10": true
+    },
+      rules: {
+    
+      },
     },
   ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
-  },
-  plugins: ["@typescript-eslint"],
-  rules: {
-    
-  },
-};
+}

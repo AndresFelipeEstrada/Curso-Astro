@@ -1,19 +1,19 @@
 ---
-const {platform,username} = Astro.props
+const { platform, username } = Astro.props;
 
 interface Props {
-    platform: string;
-    username: string;
+  platform: string;
+  username: string;
 }
 ---
+
 <a href=`https://www.${platform}.com/${username}` target="_blank">{platform}</a>
 
-
 <style>
-    a{
-        color:white;
-        padding: 0.5rem 1rem;
-        background-color: #4c1d95;
-        text-decoration: none;
-    }
+  a {
+    color: white;
+    padding: 0.5rem 1rem;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
 </style>

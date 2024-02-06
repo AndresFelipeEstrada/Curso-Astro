@@ -1,34 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro'
-const {frontmatter} = Astro.props
-const {title, author, pubDate, image, tags} = frontmatter
+import Layout from '../layouts/Layout.astro';
+const { frontmatter } = Astro.props;
+const { title, author, pubDate, image, tags } = frontmatter;
 ---
 
 <Layout title={title}>
   <h1>{title}</h1>
   <p><em>{frontmatter.description}</em></p>
-  <p>Publicado el: {pubDate.slice(0,10)}</p>
+  <p>Publicado el: {pubDate.slice(0, 10)}</p>
 
   <p>Escrito por: {author}</p>
 
-  <div class='image-container'>
-    <img src={image.url} alt={image.alt}>
+  <div class="image-container">
+    <img src={image.url} alt={image.alt} />
   </div>
 
   <div class="tags">
-    {tags.map(tag => (
+    {
+      tags.map((tag) => (
         <p class="tag">
-            <a href={`/tags/${tag}`}>{tag}</a>
+          <a href={`/tags/${tag}`}>{tag}</a>
         </p>
-    ))}
-</div>
+      ))
+    }
+  </div>
 
-  <slot/>
+  <slot />
 </Layout>
 
 <style>
   a {
-    color: #00539F;
+    color: #00539f;
   }
 
   .tags {
@@ -39,9 +41,9 @@ const {title, author, pubDate, image, tags} = frontmatter
   .tag {
     margin: 0.25em;
     border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
     font-size: 1.15em;
-    background-color: #F8FCFD;
+    background-color: #f8fcfd;
   }
 </style>

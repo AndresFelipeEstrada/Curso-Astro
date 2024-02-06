@@ -1,32 +1,37 @@
 ---
-import '../styles/global.css'
-import Layout from '../layouts/Layout.astro'
-import BlogPost from '../components/BlogPost.astro'
-const allPosts = await Astro.glob('../pages/posts/*.md')
-const pageTitle = 'Blog'
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = 'Blog';
 ---
 
 <Layout title={pageTitle}>
-	<h1>Mi blog de aprendizaje sobre Astro</h1>
-	<p>
-		Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.
-		<ul>
-      {allPosts.map((post)=> <BlogPost title={post.frontmatter.title} url={post.url} />)}
-		</ul>
-	</p>
+  <h1>Mi blog de aprendizaje sobre Astro</h1>
+  <p>
+    Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.
+    <ul>
+      {
+        allPosts.map((post) => (
+          <BlogPost title={post.frontmatter.title} url={post.url} />
+        ))
+      }
+    </ul>
+  </p>
 </Layout>
 
 <style>
-:global(.dark) h1,
-:global(.dark) p,
-:global(.dark) ul {
-  color:black
-}
-	h1 {
-		text-align: center;
-		color: white;
-	}
-	ul,a {
-		color: white;
-	}
+  :global(.dark) h1,
+  :global(.dark) p,
+  :global(.dark) ul {
+    color: black;
+  }
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  ul,
+  a {
+    color: white;
+  }
 </style>

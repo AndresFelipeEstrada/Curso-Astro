@@ -1,24 +1,26 @@
 ---
-import Social from "./Social.astro"
+import Social from './Social.astro';
 ---
 
 <footer>
-    <p>Mas informacion sobre mis proyectos en:</p>
-        <Social platform="twitter" username="andres_fe16"/>
-        <Social platform="github" username="AndresFelipeEstrada"/>
-        <Social platform="instagram" username="andrescross16"/>
+  <p>Mas informacion sobre mis proyectos en:</p>
+  <Social platform="twitter" username="andres_fe16" />
+  <Social platform="github" username="AndresFelipeEstrada" />
+  <Social platform="instagram" username="andrescross16" />
 </footer>
 
 <style>
-    footer {
-        gap: 1rem;
-        text-align: center;
-        margin-top: 2rem;
-    }
+  footer {
+    gap: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
 
-    footer > p{
-      color: white;
-    }
+  footer > p {
+    color: white;
+  }
 
-    :global(.dark) footer > p { color: black; }
+  :global(.dark) footer > p {
+    color: black;
+  }
 </style>
