@@ -1,11 +1,10 @@
 module.exports = {
   extends: [
     "plugin:astro/recommended",
-    "plugin:react/recommended"
   ],
   overrides: [
     {
-      files: ["*.astro","*.jsx"],
+      files: ["*.astro"],
       processor: "astro/client-side-ts", 
       parser: "astro-eslint-parser",
       parserOptions: {

@@ -1,13 +1,13 @@
 ---
-import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
-import Gretting from "../components/Gretting";
-const pageTitle = "Aprendiendo Astro";
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Gretting from '../components/Gretting';
+const pageTitle = 'Aprendiendo Astro';
 ---
 
 <Layout title={pageTitle}>
-  <h1 class="pageTitle">{pageTitle}</h1>
-  <Gretting client:load messages={["Hola", "Que tal", "Hola a todos"]} />
+  <h1 class="pageTitle" transition:animate="slide">{pageTitle}</h1>
+  <Gretting client:load messages={['Hola', 'Que tal', 'Hola a todos']} />
 </Layout>
 
 <style>

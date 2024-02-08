@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercera publicación en el blog
-author: Alumno de Astro
+author: Andres Felipe Estrada
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
     url: "https://docs.astro.build/assets/rays.webp"

@@ -1,15 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { fade } from 'astro:transitions';
 const { frontmatter } = Astro.props;
 const { title, author, pubDate, image, tags } = frontmatter;
 ---
 
 <Layout title={title}>
   <h1>{title}</h1>
-  <p><em>{frontmatter.description}</em></p>
+  <p transition:animate={fade({ duration: '2s' })}>
+    <em>{frontmatter.description}</em>
+  </p>
+
   <p>Publicado el: {pubDate.slice(0, 10)}</p>
 
-  <p>Escrito por: {author}</p>
+  <p>Escrito por: <a href="/about/"> {author}</a></p>
 
   <div class="image-container">
     <img src={image.url} alt={image.alt} />
@@ -17,7 +21,7 @@ const { title, author, pubDate, image, tags } = frontmatter;
 
   <div class="tags">
     {
-      tags.map((tag) => (
+      tags.map((tag: string) => (
         <p class="tag">
           <a href={`/tags/${tag}`}>{tag}</a>
         </p>
