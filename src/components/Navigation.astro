@@ -30,15 +30,19 @@ import '../styles/global.css';
 </style>
 
 <script>
-  document.addEventListener('astro:after-swap', () => {
+  const highlightActiveLink = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = nav.querySelectorAll('a');
-    const currenLink = window.location.href;
+    const currentLink = window.location.href;
 
     navLinks.forEach((link) => {
-      if (link.href === currenLink) {
+      if (link.href === currentLink) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
-  });
+  };
+
+  document.addEventListener('astro:page-load', highlightActiveLink);
 </script>
