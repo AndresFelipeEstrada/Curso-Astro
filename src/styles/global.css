@@ -78,10 +78,10 @@ a {
   text-transform: uppercase;
 }
 
-.nav-links a:hover,
+/* .nav-links a:hover,
 .nav-links a:focus {
   background-color: #4c1d95;
-}
+} */
 
 .expanded {
   display: unset;

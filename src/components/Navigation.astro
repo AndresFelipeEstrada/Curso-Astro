@@ -2,12 +2,12 @@
 import '../styles/global.css';
 ---
 
-<div class="nav-links" transition:animate="slide">
+<nav class="nav-links" transition:animate="slide">
   <a href="/">Home</a>
-  <a href="/about" data-astro-reload>About</a>
+  <a href="/about">About</a>
   <a href="/blog">Blog</a>
   <a href="/tags">Tags</a>
-</div>
+</nav>
 
 <style>
   a {
@@ -16,7 +16,6 @@ import '../styles/global.css';
     margin-right: 5px;
     margin-left: 5px;
   }
-  h2,
   p {
     text-align: center;
     color: white;
@@ -24,4 +23,22 @@ import '../styles/global.css';
   :global(.dark) a {
     color: black;
   }
+
+  nav a.active {
+    background-color: #4c1d95;
+  }
 </style>
+
+<script>
+  document.addEventListener('astro:after-swap', () => {
+    const nav = document.querySelector('.nav-links');
+    const navLinks = nav.querySelectorAll('a');
+    const currenLink = window.location.href;
+
+    navLinks.forEach((link) => {
+      if (link.href === currenLink) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>

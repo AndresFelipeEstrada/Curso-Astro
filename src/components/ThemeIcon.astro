@@ -40,7 +40,7 @@
 
 <script>
   document.addEventListener('astro:page-load', () => {
-  const theme = (() => {
+    const theme = (() => {
       if (
         typeof localStorage !== 'undefined' &&
         localStorage.getItem('theme')
@@ -76,7 +76,7 @@
   });
 </script>
 <script>
-  document.addEventListener('astro:afer-swap', () => {
+  document.addEventListener('astro:after-swap', () => {
     localStorage.theme === 'dark'
       ? document.documentElement.classList.add('dark')
       : document.documentElement.classList.add('light');
